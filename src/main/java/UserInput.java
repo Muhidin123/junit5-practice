@@ -1,3 +1,3 @@
 public interface UserInput {
-    public String getNextInput();
+    String getNextInput();
 }
