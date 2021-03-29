@@ -1,7 +1,4 @@
-import org.junit.Assert;
-
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class sockMerchant {
 
@@ -56,9 +53,60 @@ public class sockMerchant {
             status = true;
         }
         return status;
+        //OR A ONE LINER return n - 1;
+        //mathematical induction.
     }
 
 
-    //OR A ONE LINER return n - 1;
-    //mathematical induction.
+
+
+        public static void main(String[] args) {
+            int[] tokens = {100,200,300,400};
+            int P = 200;
+            System.out.println(bagOfTokensScore(tokens, P));
+        }
+
+
+
+        public static int bagOfTokensScore(int[] tokens, int P) {
+
+            Arrays.sort(tokens);
+
+            if (tokens.length == 0 || P < tokens[0]) return 0;
+
+
+            int left = 0, right = tokens.length - 1, points = 0;
+
+            while (left <= right) {
+
+                if (P >= tokens[left]) {
+
+                    points++;
+
+                    P -= tokens[left];
+
+                    left++;
+
+                } else {
+
+                    if (right - left > 1) {
+
+                        P += tokens[right];
+
+                        right--;
+
+                        points--;
+
+                    } else break;
+
+                }
+
+            }
+
+            return points;
+        }
+
 }
+
+
+

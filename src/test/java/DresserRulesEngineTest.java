@@ -1,11 +1,5 @@
-import org.codehaus.plexus.util.StringInputStream;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import static org.mockito.Mockito.when;
 
 import static org.junit.Assert.*;
 
@@ -34,23 +28,17 @@ public class DresserRulesEngineTest extends Mockito {
     }
 
 
-    UserInput userInput = Mockito.mock(UserInput.class);;
+    UserInput userInput = Mockito.mock(UserInput.class);
 
     @Test
     public void shouldSendEmailWhenInputsMatch() {
         when(userInput.getNextInput()).thenReturn("test");
-
         MyService myService = new MyService(userInput);
-
         assertTrue(myService.shouldSendEmail("test"));
     }
 
     @Test
     public void shouldNotSendEmailWhenInputsDoNotMatch() {
-        when(userInput.getNextInput()).thenReturn("not test");
-        when(userInput.getNextInput()).thenReturn("not test");
-        when(userInput.getNextInput()).thenReturn("not test");
-        when(userInput.getNextInput()).thenReturn("not test");
         when(userInput.getNextInput()).thenReturn("not test");
 
         MyService myService = new MyService(userInput);

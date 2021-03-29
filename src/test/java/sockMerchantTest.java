@@ -16,6 +16,4 @@ public class sockMerchantTest {
         assertTrue("true", TEST.evenOrOdd(4));
         assertFalse("false", TEST.evenOrOdd(3));
     }
-
-
 }
