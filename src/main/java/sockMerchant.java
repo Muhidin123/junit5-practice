@@ -1,9 +1,14 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
+import java.util.List;
+import java.util.*;
+
 
 public class sockMerchant {
 
     public static void main(String[] args) {
-        sockMerchant test = new sockMerchant();
+//        sockMerchant test = new sockMerchant();
 //        Scanner scan = new Scanner(System.in);
 //        int n = scan.nextInt();
 //        HashMap<Integer, Integer> colors = new HashMap<>();
@@ -24,8 +29,9 @@ public class sockMerchant {
 //        }
 //
 //        System.out.println(pairs);
-
-        System.out.println(test.numberOfMatches(14));
+//        List<Integer> array = Arrays.asList(1,2);
+//        List<Integer> sequence = Arrays.asList(2);
+//        System.out.println(isValidSubsequence(array, sequence));
     }
 
 
@@ -60,11 +66,11 @@ public class sockMerchant {
 
 
 
-        public static void main(String[] args) {
-            int[] tokens = {100,200,300,400};
-            int P = 200;
-            System.out.println(bagOfTokensScore(tokens, P));
-        }
+//        public static void main(String[] args) {
+//            int[] tokens = {100,200,300,400};
+//            int P = 200;
+//            System.out.println(bagOfTokensScore(tokens, P));
+//        }
 
 
 
@@ -106,6 +112,29 @@ public class sockMerchant {
             return points;
         }
 
+
+        public static boolean isValidSubsequence(@NotNull List<Integer> array, List<Integer> sequence) { int j = 0;
+
+            //Given two non empty arrays write a function that determines if second array is a subsequence of the first one
+            //input array = [1,2,3,4], sequence = [2, 4]
+            //output true
+            boolean returnState = false;
+            int size = sequence.size();
+            if (array.size() <= 1) {
+                return true;
+            } else {
+                for (Integer integer : array) {
+                    if (integer.equals(sequence.get(j))) {
+                        j++;
+                        if(j == size){
+                            returnState = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return returnState;
+        }
 }
 
 
