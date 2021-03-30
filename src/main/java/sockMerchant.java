@@ -113,7 +113,7 @@ public class sockMerchant {
         }
 
 
-        public static boolean isValidSubsequence(@NotNull List<Integer> array, List<Integer> sequence) { int j = 0;
+        public boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) { int j = 0;
 
             //Given two non empty arrays write a function that determines if second array is a subsequence of the first one
             //input array = [1,2,3,4], sequence = [2, 4]
@@ -135,6 +135,9 @@ public class sockMerchant {
             }
             return returnState;
         }
+
+
+
 }
 
 
